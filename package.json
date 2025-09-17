@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@jtarrio/webrtlsdr": "^2.0.3"
+  }
+}
