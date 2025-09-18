@@ -8,50 +8,30 @@
         }
       }
     </script>
-    <script src="script.js" type="module"></script>
+    <script src="lowlevel.js" type="module"></script>
   </head>
   <body>
-    <h1>High-level Web RTL-SDR demo</h1>
-    <p>A full-featured SDR receiver.</p>
+    <h1>Low-level Web RTL-SDR demo</h1>
+    <p>Measures the average power of the received signals.</p>
 
     <div>
-      <button id="playButton">Play</button><button id="stopButton">Stop</button>
+      <button id="startButton">Start</button>
+      <button id="stopButton">Stop</button>
     </div>
 
     <div>
       <label for="frequencyInput">Center frequency: </label
-      ><input id="frequencyInput" type="number" />
-      <label for="offsetInput">Tuning offset: </label
-      ><input id="offsetInput" type="number" />
-      <label for="ppmInput">Frequency correction (PPM):</label
-      ><input id="ppmInput" type="number" />
+      ><input id="frequencyInput" type="number" value="88500000" />
     </div>
 
     <div>
       <label for="gainInput">Gain: </label
-      ><input id="gainInput" type="range" min="0" max="50" />
-      <input id="autoGainBox" type="checkbox" /><label for="autoGainBox"
+      ><input id="gainInput" type="range" min="0" max="50" disabled />
+      <input id="autoGainBox" type="checkbox" checked /><label for="autoGainBox"
         >Auto gain</label
       >
     </div>
-
-    <div>
-      <label for="schemeSelect">Scheme: </label
-      ><select id="schemeSelect"></select>
-      <label for="bandwidthInput">Bandwidth: </label
-      ><input id="bandwidthInput" type="number" />
-      <label for="squelchInput">Squelch: </label
-      ><input id="squelchInput" type="number" />
-      <input id="stereoBox" type="checkbox" /><label for="stereoBox"
-        >Stereo</label
-      >
-    </div>
-
-    <div>
-      <label for="volumeInput">Volume: </label
-      ><input id="volumeInput" type="range" min="0" max="100" />
-    </div>
-
+    <canvas id="canvas"></canvas>
     <fieldset>
       <legend>Log</legend>
       <textarea
