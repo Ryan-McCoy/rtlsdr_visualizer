@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="importmap">
-      {
-        "imports": {
-          "@jtarrio/webrtlsdr/": "/dist/"
-        }
+    <script src="lowlevel.js" type="module" defer></script>
+    <style>
+      .bar {
+        width: 300px;
+        background-color: deepskyblue;
+        color: white;
+        text-align: center;
+        line-height: 2em;
+
+        transition-property: width;
+        transition-timing-function: linear;
       }
-    </script>
-    <script src="lowlevel.js" type="module"></script>
+    </style>
   </head>
   <body>
     <h1>Low-level Web RTL-SDR demo</h1>
@@ -31,7 +36,7 @@
         >Auto gain</label
       >
     </div>
-    <canvas id="canvas"></canvas>
+    <div class="bar" id="bar"><p>Test</p></div>
     <fieldset>
       <legend>Log</legend>
       <textarea

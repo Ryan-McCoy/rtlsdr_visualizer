@@ -4,6 +4,7 @@ var elements = {};
 var provider;
 var device;
 var interval;
+var drawinterval;
 var dB
 
 async function main() {
@@ -18,6 +19,7 @@ async function loop() {
     interval = setInterval(async function () {
         await onStartButtonClick()
     }, 2000)
+    drawinterval = setInterval(draw, 100)
 }
 
 // We ask the user to click "start" so the WebUSB API will let us connect to the device.
@@ -127,11 +129,11 @@ function preparePage() {
     }
 }
 
-function draw() {
-    let canvas = elements.canvas;
+const width = 300
 
-    requestAnimationFrame(canvas)
+function draw() {
+    let elem = document.getElementById("bar");
+    elem.style.width = (width + dB * 10) + "px";
 }
 
 window.addEventListener("load", main);
-draw()
